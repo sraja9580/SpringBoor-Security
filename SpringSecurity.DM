@@ -1,4 +1,4 @@
-											Spring Boot Security
+						Spring Boot Security
 											
 What is Authentication
 	Validating user,ie make sure the client accessing the resource valid user
@@ -11,7 +11,7 @@ Who does the Authorization
 	
 How Spring Web Security Works?
 
-<img src="How-Authendication-Works-Step1.PNG"
+<img src="https://github.com/sraja9580/SpringBoor-Security/blob/master/How-Authendication-Works-Step1.PNG"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 	
