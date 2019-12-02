@@ -1,7 +1,7 @@
 						Spring Boot Security
 											
 What is Authentication
-	Validating user,ie make sure the client accessing the resource valid user
+	Validating user,ie make sure the client accessing the resource is valid user
 	
 Who does the Authentication in Boot
 	AuthenticationManager->authenticate() method does the authentication
