@@ -1,6 +1,6 @@
-											Spring Boot Security
-											********************
-											********************
+						       Spring Boot Security
+						       ********************
+						       ********************
 											
 What is Authentication
 **********************
@@ -88,9 +88,7 @@ How Spring Web Security Works?
 		
 3. Spring JDBC Authentication with H2 in memory database 03_spring_security_jdbc
 --------------------------------------------------------------------------------
-	
-	https://www.youtube.com/watch?v=LKvrFltAgCQ&t=111s
-	
+
 	Using DEFAULT Schema
 	....................
 	Storing credentials in DB
