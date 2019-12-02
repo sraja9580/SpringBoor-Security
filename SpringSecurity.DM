@@ -10,6 +10,10 @@ Who does the Authorization
 	AuthenticationManager does it.
 	
 How Spring Web Security Works?
+
+<img src="How-Authendication-Works-Step1.PNG"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 	
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 	https://www.youtube.com/watch?v=iyXne7dIn7U
