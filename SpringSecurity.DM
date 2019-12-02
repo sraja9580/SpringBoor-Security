@@ -11,7 +11,7 @@ Who does the Authorization
 	
 How Spring Web Security Works?
 
-![alt text](https://raw.github.com/sraja9580/SpringBoor-Security/blob/master/How-Authendication-Works-Step1.PNG)
+#![alt text](https://raw.github.com/sraja9580/SpringBoor-Security/blob/master/How-Authendication-Works-Step1.PNG)
 	
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 	https://www.youtube.com/watch?v=iyXne7dIn7U
