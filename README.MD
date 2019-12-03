@@ -1,6 +1,6 @@
-											Spring Boot Security
-											********************
-											********************
+						   Spring Boot Security
+						   ********************
+											
 											
 What is Authentication
 **********************
@@ -182,6 +182,7 @@ How Spring Web Security Works?
 	   configure(HttpSecurity httpSecurity)
 	   
 	4.test
+<<<<<<< HEAD
 	
 4. Spring Security By overriding UserDetailsService using JPA and MYSQL (04_spring_security_userdetailsservice_jpa)
 -------------------------------------------------------------------------------------------------------------------
@@ -246,3 +247,5 @@ How Spring Web Security Works?
 	   
 	
  
+=======
+>>>>>>> f36daa462017a0e3a028408ff7a147a1e33f44d5
