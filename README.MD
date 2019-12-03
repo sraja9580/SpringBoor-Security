@@ -1,6 +1,6 @@
 						   Spring Boot Security
 						   ********************
-											
+Search You tube Java Brains Spring Security Basics								
 											
 What is Authentication
 **********************
@@ -16,7 +16,31 @@ Who does the Authorization
 	
 How Spring Web Security Works?
 ******************************
+
+JWT
+***
+	standard: RFC 7519
+	JWT -> Jason Web Token
+	---
 	
+	JWT token has 3 parts 
+	---------------------
+		header		-> token type algorithm used to sign 
+		payload		-> values(userid, username,token creation time etc)
+		signature	-> header and payload is encrypted with base64 and signature created using SECRET available in server.
+					   only server has the secret.
+					   
+	What happens when we access the resource with JWT token?
+	--------------------------------------------------------
+		Server takes header and payload, create signature and verifies against signature stored in server.
+		if payload is tampered then signature will be different.
+		
+	Disadvantage:
+	-------------
+		payload is visible to everyone ,so we have to be careful on what we are sending in payload
+		Token is not tied with any user,so if someone steals the token they can also use the same until it get expired
+			*if token is stolen we can inform the auth server that token is stolen , so it will keep the token in invalid list.
+			
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
 	https://www.youtube.com/watch?v=iyXne7dIn7U
@@ -182,10 +206,11 @@ How Spring Web Security Works?
 	   configure(HttpSecurity httpSecurity)
 	   
 	4.test
-<<<<<<< HEAD
 	
 4. Spring Security By overriding UserDetailsService using JPA and MYSQL (04_spring_security_userdetailsservice_jpa)
 -------------------------------------------------------------------------------------------------------------------
+	
+	https://www.youtube.com/watch?v=TNt3GHuayXs
 	
 	*Spring dont provide direct integration with JPA like it does for JDBC,we have to override user details service and provide it to authentication.
 	Even if we are not doing spring internally used UserDatailsService,By overriding it we can provide custom implementation.
@@ -244,8 +269,7 @@ How Spring Web Security Works?
 	   http://localhost:8081/ --access with out login
 	   http://localhost:8081/user --only logged in users with user and admin role
 	   http://localhost:8081/admin --only logged in users with admin role
-	   
-	
- 
-=======
->>>>>>> f36daa462017a0e3a028408ff7a147a1e33f44d5
+
+5. LDAP AUTHENDICATION
+----------------------
+	https://www.youtube.com/watch?v=-wDUChgvYgU
