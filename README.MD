@@ -182,3 +182,67 @@ How Spring Web Security Works?
 	   configure(HttpSecurity httpSecurity)
 	   
 	4.test
+	
+4. Spring Security By overriding UserDetailsService using JPA and MYSQL (04_spring_security_userdetailsservice_jpa)
+-------------------------------------------------------------------------------------------------------------------
+	
+	*Spring dont provide direct integration with JPA like it does for JDBC,we have to override user details service and provide it to authentication.
+	Even if we are not doing spring internally used UserDatailsService,By overriding it we can provide custom implementation.
+	
+	Hard coding User Details in UserDetailService
+	.............................................
+	
+	1. Create Spring Boot Project With following starters
+		Web
+		JPA
+		Security
+		MYSQL
+		
+	2. Override authentication method
+		
+		@Autowired
+		UserDetailsService userDetailsService;	
+		
+		// WE ARE OVERIDING THIS METHOD TO PROVIDE CUSOTOM AUTHENDICATION.DEFAULT AUTHENDICATION JUST ALLOWS TO CONFIGURE SINGLE USER 
+		@Override
+		protected void configure(AuthenticationManagerBuilder auth) throws Exception {				
+			auth.userDetailsService(userDetailsService);	 
+		}
+	 		
+	3. Override authorization method same as 02_spring_boot_authorization example	    
+	
+	4. Provide Custom implementation for UserDatailsService 
+		create class by implementing UserDetailsService 
+		over ride method  UserDetails loadUserByUsername(String username) method
+			hardcode list of user details
+	5.Test
+	   http://localhost:8081/ --access with out login
+	   http://localhost:8081/user --only logged in users with user and admin role
+	   http://localhost:8081/admin --only logged in users with admin role
+	   
+	USE JPA TO READ DATA FROM TABLE in UserDetailService
+	....................................................
+	
+	1. Create Spring Boot Project as above		 
+		
+	2. Override authentication method as above			 
+	 		
+	3. Override authorization method as above		    
+	
+	4. Provide Custom implementation for UserDatailsService 
+		create class by implementing UserDetailsService 
+		over ride method  UserDetails loadUserByUsername(String username) method
+			Read Data from table using JPA (Repository)
+			
+	5. Create TABLE and insert user data
+		CREATE TABLE SPRING_SECUTIRY_USER (id int NOT NULL AUTO_INCREMENT,USER_NAME varchar(255) NOT NULL,PASS varchar(255),ROLES varchar(255),ACTVE boolean, PRIMARY KEY (id));
+		insert into SPRING_SECUTIRY_USER  values (1,'raja','test','ROLE_USER,ROLE_ADMIN',true);
+		insert into SPRING_SECUTIRY_USER  values (2,'arun','test','ROLE_USER',true);
+		
+	5.Test
+	   http://localhost:8081/ --access with out login
+	   http://localhost:8081/user --only logged in users with user and admin role
+	   http://localhost:8081/admin --only logged in users with admin role
+	   
+	
+ 

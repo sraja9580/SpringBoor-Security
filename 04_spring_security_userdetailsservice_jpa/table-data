@@ -1,0 +1,12 @@
+
+ CREATE TABLE SPRING_SECUTIRY_USER (
+    id int NOT NULL AUTO_INCREMENT,
+    USER_NAME varchar(255) NOT NULL,    
+    PASS varchar(255),
+    ROLES varchar(255),
+    ACTVE boolean,
+    PRIMARY KEY (id)
+);
+
+insert into SPRING_SECUTIRY_USER  values (1,'raja','test','ROLE_USER,ROLE_ADMIN',true);
+insert into SPRING_SECUTIRY_USER  values (2,'arun','test','ROLE_USER',true);
