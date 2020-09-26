@@ -42,7 +42,9 @@
  
 ## How Spring Web Security Works?
 When you add **security starter** to your pom,spring enabled authendication.
-* It adds a **filter** which will intercept all the request (**Adds mandatory authentication for URLs**).
+* It adds a **filter** which will intercept all the request (**Adds mandatory authentication for URLs**).<br>
+![How Spring Web Security Works](images/How-Authendication-Works-Step1.PNG) <br>
+
 **Spring Security Default Behavior**
 * Adds mandatory authentication for URLs
 * Adds login form
