@@ -1,4 +1,5 @@
 # Spring Boot Security
+
 ## What Spring Security Can do?
 * User name / password authentication
 * SSO - LDAP ,Okta
@@ -6,7 +7,13 @@
 * Intra App Authorization (OAuth)
 * Micro Service Security (Using tokens JWT)
 * Method level security
-						  
+
+## 5 Core concepts in Spring Security
+	Authentication
+	Authorization
+	Principal
+	Granted Authority
+	Roles
 								
 											
 What is Authentication
