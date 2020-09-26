@@ -39,12 +39,17 @@
 * Group of authorities.
 * Developer -> clone and pull request
 * Lead -> clone , pull request and merge pull request.
-Who does the Authorization 
-**************************
-	AuthenticationManager does it.
+ 
+## How Spring Web Security Works?
+When you add **security starter** to your pom,spring enabled authendication.
+* It adds a **filter** which will intercept all the request (**Adds mandatory authentication for URLs**).
+**Spring Security Default Behavior**
+* Adds mandatory authentication for URLs
+* Adds login form
+* Handles login error
+* Generates Default User - user
+* Generates Default Password for user -> check in console log
 	
-How Spring Web Security Works?
-******************************
 
 JWT
 ***
