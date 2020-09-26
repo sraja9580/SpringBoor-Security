@@ -9,21 +9,36 @@
 * Method level security
 
 ## 5 Core concepts in Spring Security
-	Authentication
-	Authorization
-	Principal
-	Granted Authority
-	Roles
+* Authentication 
+* Authrization 
+* Principal
+* Granted Authority
+* Roles
 								
 											
-What is Authentication
-**********************
-	Validating user,ie make sure the client accessing the resource valid user
+**Authentication**<br>
+* Verifying users identity (who is this user?)
+* Knowledge based authentication (useraneme-password,secret question)
+* Possession Based Authentication (token device,phone-text message)
+* Multi factor Authentication -> Combination of more than one type of authentication
 	
-Who does the Authentication in Boot
-***********************************
-	AuthenticationManager->authenticate() method does the authentication
-	
+**Authorization**
+* Are they allowed to do this?
+* Can a authenticated user access particular resource.
+* Is a authenticated uses has authority to check-out?
+
+**Principal**
+* Currently logged-in(Authenticated) user. 
+* Once user is authenticated a principal is created, and it is used to get the user info throughout the session
+
+**Granted Authority**
+* GrantedAuthority is an privilege, an application can have multiple privilege(do_checkout,make_store_announcement,view_department_financials)
+* In Spring Security, we can think of each GrantedAuthority as an individual privilege. Examples could include READ_AUTHORITY, WRITE_PRIVILEGE, or even CAN_EXECUTE_AS_ROOT. The important thing to understand is that the name is arbitrary.
+
+**Roles**
+* Group of authorities.
+* Developer -> clone and pull request
+* Lead -> clone , pull request and merge pull request.
 Who does the Authorization 
 **************************
 	AuthenticationManager does it.
