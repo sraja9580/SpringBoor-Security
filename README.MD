@@ -51,6 +51,9 @@ When you add **security starter** to your pom,spring enabled authendication.
 * Handles login error
 * Generates Default User - user
 * Generates Default Password for user -> check in console log
+
+## Spring Security Default
+By just adding **spring-boot-starter-security** to pom.xml, we can enable default security.
 	
 
 JWT
