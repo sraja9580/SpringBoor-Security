@@ -62,9 +62,47 @@ You can override **default credentials** in **application.properties**
 spring.security.user.name=user
 spring.security.user.password=test
 ```
+## [Configure Authentication and Authorizaion](02_spring-security-inmemory)
 
+* We can over ride default authentication by using **AuthenticationManager**.
+* We have to create a class that extends **WebSecurityConfigurerAdapter** and override **configure(AuthenticationManagerBuilder auth)**, add **@EnableWebSecurity** to the class.
+* By accessing **auth** object you can enable any type of authendication(**JDBC,LDAP etc**)
+```
+@EnableWebSecurity
+public class InMemorySecurityConfig extends WebSecurityConfigurerAdapter{
 	
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication()
+		.withUser("raja")
+		.password("{noop}test")
+		.roles("ADMIN");
+	}	
+}
 
+```
+<br><br>
+* We can configure Authorizaion by overriding **configure(HttpSecurity http)**
+```
+protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication()
+		.withUser("raja")
+		.password("{noop}test")
+		.roles("ADMIN")
+		.and()
+		.withUser("srini")
+		.password("{noop}test")
+		.roles("USER");
+	}
+	
+	protected void configure(HttpSecurity http) throws Exception {
+	  http.authorizeRequests()
+	  .antMatchers("/admin").hasRole("ADMIN")
+	  .antMatchers("/user").hasAnyRole("USER","ADMIN")
+	  .antMatchers("/").permitAll()
+	  .and().formLogin();
+	}
+
+```
 JWT
 ***
 	standard: RFC 7519
