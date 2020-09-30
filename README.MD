@@ -105,6 +105,7 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 ```
 ## [JWT](jwt)
 * **Jason Web Token**
+![JWT flow](images/jwt-2.PNG) <br>
 
 ## JWT token has 3 parts 
 ![JWT](images/jwt-1.PNG) <br>
