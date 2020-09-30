@@ -13,8 +13,7 @@
 * Authrization 
 * Principal
 * Granted Authority
-* Roles
-								
+* Roles								
 											
 **Authentication**<br>
 * Verifying users identity (who is this user?)
@@ -104,7 +103,7 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 ```
 ## [JWT](jwt)
-* **Jason Web Token**
+* **Jason Web Token** <br>
 ![JWT flow](images/jwt-2.PNG) <br>
 
 ## JWT token has 3 parts 
