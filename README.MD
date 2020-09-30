@@ -120,7 +120,7 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 ## Disadvantage:	 
 * payload is visible to everyone ,so we have to be careful on what we are sending in payload 
 * Token is not tied with any user,so if someone steals the token they can also use the same until it get expired
-* if token is stolen we can inform the auth server that token is stolen , so it will keep the token in invalid list.
+* if token is stolen we can inform the auth server that token is stolen , so it will keep the token in invalid list <br>
 ![JWT](images/jwt-3.PNG) <br>
 			
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
