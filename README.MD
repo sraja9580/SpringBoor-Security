@@ -106,10 +106,12 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 ## [JWT](jwt)
 * **Jason Web Token**
 
-## JWT token has 3 parts 	
-header		-> token type algorithm used to sign 
-payload		-> values(userid, username,token creation time etc)
-signature	-> header and payload is encrypted with base64 and signature created using SECRET available in server. only server has the secret.
+## JWT token has 3 parts 
+![JWT](images/jwt-1.PNG) <br>
+* **header**	-> token type algorithm used to sign 
+* **payload****	-> values(userid, username,token creation time etc)
+* **signature**	-> header and payload is encrypted with base64 and signature created using SECRET available in server. only server has the secret.
+![JWT](images/jwt-dcryptd.PNG) <br>
 					   
 ## What happens when we access the resource with JWT token?	
 * Server takes header and payload, create signature and verifies against signature stored in server.
