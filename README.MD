@@ -104,28 +104,20 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 ```
 ## [JWT](jwt)
-***
-	standard: RFC 7519
-	JWT -> Jason Web Token
-	---
-	
-	JWT token has 3 parts 
-	---------------------
-		header		-> token type algorithm used to sign 
-		payload		-> values(userid, username,token creation time etc)
-		signature	-> header and payload is encrypted with base64 and signature created using SECRET available in server.
-					   only server has the secret.
+* **Jason Web Token**
+
+## JWT token has 3 parts 	
+header		-> token type algorithm used to sign 
+payload		-> values(userid, username,token creation time etc)
+signature	-> header and payload is encrypted with base64 and signature created using SECRET available in server. only server has the secret.
 					   
-	What happens when we access the resource with JWT token?
-	--------------------------------------------------------
-		Server takes header and payload, create signature and verifies against signature stored in server.
-		if payload is tampered then signature will be different.
+## What happens when we access the resource with JWT token?	
+* Server takes header and payload, create signature and verifies against signature stored in server.
+* if payload is tampered then signature will be different.
 		
-	Disadvantage:
-	-------------
-		payload is visible to everyone ,so we have to be careful on what we are sending in payload
-		Token is not tied with any user,so if someone steals the token they can also use the same until it get expired
-			*if token is stolen we can inform the auth server that token is stolen , so it will keep the token in invalid list.
+## Disadvantage:	 
+* payload is visible to everyone ,so we have to be careful on what we are sending in payload Token is not tied with any user,so if someone steals the token they can also use the same until it get expired
+* if token is stolen we can inform the auth server that token is stolen , so it will keep the token in invalid list.
 			
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
