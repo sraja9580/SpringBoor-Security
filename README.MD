@@ -103,7 +103,7 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 	}
 
 ```
-JWT
+## [JWT](jwt)
 ***
 	standard: RFC 7519
 	JWT -> Jason Web Token
