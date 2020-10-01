@@ -126,6 +126,29 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 * Token is not tied with any user,so if someone steals the token they can also use the same until it get expired
 * if token is stolen we can inform the auth server that token is stolen , so it will keep the token in invalid list <br>
 ![JWT](images/jwt-3.PNG) <br>
+
+## JWT Authorization in Spring Boot App
+**1. Create Rest API**
+* Create RestAPI with **Web,Security** starters
+* Create Endpoint for **helloworld(/)**
+```
+@GetMapping()
+public String hello() {
+	return "Welcome";
+}
+```
+* Create Custom security for authentication
+```
+@EnableWebSecurity
+public class HelloWorldSecurity extends WebSecurityConfigurerAdapter {
+	@Autowired
+	HardCodedUserDetailsService userDetailsService;
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(this.userDetailsService);
+	}	 
+}
+```
+* Test **Hello** endpoint
 			
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
