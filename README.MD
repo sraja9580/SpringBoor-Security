@@ -3,7 +3,7 @@
 * [5 Core concepts in Spring Security](#5-core-concepts-in-spring-security)
 * [How Spring Web Security Works?](#how-spring-web-security-works)
 * [Spring Security Default](#spring-security-default)
-* [5 Core concepts in Spring Security](#5-core-concepts-in-spring-security)
+* [JWT](#jwt)
 ## What Spring Security Can do
 * User name / password authentication
 * SSO - LDAP ,Okta
@@ -106,7 +106,7 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 	}
 
 ```
-## [JWT](jwt)
+## [JWT](02_spring-security-jwt)
 * **Jason Web Token** <br> <br>
 ![JWT flow](images/jwt-2.PNG) <br>
 
