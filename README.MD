@@ -1,10 +1,10 @@
 # Spring Boot Security
-* [What Spring Security Can do?](#what-spring-security-can-do-)
+* [What Spring Security Can do?](#what-spring-security-can-do)
 * [5 Core concepts in Spring Security](#5-core-concepts-in-spring-security)
-* [How Spring Web Security Works?](#how-spring-web-security-works-)
+* [How Spring Web Security Works?](#how-spring-web-security-works)
 * [Spring Security Default](#spring-security-default)
 * [5 Core concepts in Spring Security](#5-core-concepts-in-spring-security)
-## What Spring Security Can do?
+## What Spring Security Can do
 * User name / password authentication
 * SSO - LDAP ,Okta
 * App level Authorization
@@ -43,7 +43,7 @@
 * Developer -> clone and pull request
 * Lead -> clone , pull request and merge pull request.
  
-## How Spring Web Security Works?
+## How Spring Web Security Works
 When you add **security starter** to your pom,spring enabled authendication.
 * It adds a **filter** which will intercept all the request (**Adds mandatory authentication for URLs**).<br>
 ![How Spring Web Security Works](images/How-Authendication-Works-Step1.PNG) <br>
