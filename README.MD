@@ -1,7 +1,7 @@
 # Spring Boot Security
-* [What Spring Security Can do?](#what-spring-security-can-do?)
+* [What Spring Security Can do?](#what-spring-security-can-do-)
 * [5 Core concepts in Spring Security](#5-core-concepts-in-spring-security)
-* [How Spring Web Security Works?](#how-spring-web-security-works?)
+* [How Spring Web Security Works?](#how-spring-web-security-works-)
 * [Spring Security Default](#spring-security-default)
 * [5 Core concepts in Spring Security](#5-core-concepts-in-spring-security)
 ## What Spring Security Can do?
