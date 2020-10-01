@@ -154,49 +154,37 @@ public class HelloWorldSecurity extends WebSecurityConfigurerAdapter {
 * Add **io.jsonwebtoken:jjwt:0.9.1,javax.xml.bind:jaxb-api:2.3.0** to pom or build.gradle
 * Create **JWTUtil** class for **Create token,validata token,get userinfo from token**
 ```
+//REFER SOURCE FOR FULL CLASS
 @Service
 public class JwtUtil {
-
-    private String SECRET_KEY = "secret";
-
-    public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
-    }
-
-    public Date extractExpiration(String token) {
-        return extractClaim(token, Claims::getExpiration);
-    }
-
-    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
-        final Claims claims = extractAllClaims(token);
-        return claimsResolver.apply(claims);
-    }
-    private Claims extractAllClaims(String token) {
-        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
-    }
-
-    private Boolean isTokenExpired(String token) {
-        return extractExpiration(token).before(new Date());
-    }
-
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
         return createToken(claims, userDetails.getUsername());
     }
-
-    private String createToken(Map<String, Object> claims, String subject) {
-
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
-    }
-
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = extractUsername(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 }
 ```
+* Create **/authenticate** endpoint (authenticate user,	generate token and return it in response)
+```
+@PostMapping("/authenticate")
+public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
+	authManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),request.getPassword()));
+	final UserDetails userDetails = userDetailsService.loadUserByUsername(request.getUsername());
+	final String accessToken = jwtUtil.generateToken(userDetails);
+	return ResponseEntity.ok(new AuthenticationResponse(accessToken));
+}
+```
+* allow **/authenticate** endpoint for non logged in users by overriding **configure(HttpSecurity http)**
+```
+protected void configure(HttpSecurity http) throws Exception {
+	http.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll().anyRequest().authenticated();	
+}
+```
+* Test **Token Generation** in postman
+![access-token-generation](images/getting-token.PNG) <br>
 			
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
