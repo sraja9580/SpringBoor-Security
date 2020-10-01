@@ -185,7 +185,32 @@ protected void configure(HttpSecurity http) throws Exception {
 ```
 * Test **Token Generation** in postman
 ![access-token-generation](images/getting-token.PNG) <br>
-			
+
+**2. Authorize Incoming Request with Filter**
+* Create Filter by extending **OncePerRequestFilter**
+```
+//REFERE SOURCE FOR FULL CLASS
+@Component
+public class JwtRequestFilter extends OncePerRequestFilter {
+  @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws ServletException, IOException {    
+	    //validate token
+	    chain.doFilter(request, response);
+	    }
+}
+```
+* Configure **JwtRequestFilter** in Security class to intercept requests **http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)**
+```
+protected void configure(HttpSecurity http) throws Exception {
+	http.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll().anyRequest().authenticated()
+	//CALLING OUR JwtRequestFilter BEFORE UsernamePasswordAuthenticationFilter
+	http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+}
+```
+* Test other endpoints with token.
+![](images/calling-service-with-token.PNG) <br>
+
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
 	https://www.youtube.com/watch?v=iyXne7dIn7U
