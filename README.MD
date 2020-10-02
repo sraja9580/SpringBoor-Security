@@ -221,11 +221,11 @@ OAuth is an open standard for access delegation, it was created for **authorizat
 ### OAuth Teriminologie
 **Resource**<br>
 **Resource Owner**<br>
-Owner of the resource ._An entity capable of granting access to a protected resource_.
+Owner of the resource ._An entity capable of granting access to a protected resource_.<br>
 **Client**<br>
-Client application. _An application making request to protected resource with authorization_.
+Client application. _An application making request to protected resource with authorization_.<br>
 **Auth Server**<br>
-The Server issuing access token to the client
+The Server issuing access token to the client<br>
 ### Client Credentials Flow
 Webservice to Webserice autoriztion(client id, secret)<br>
 ![client-credentials-flow](images/oauth-client-credentails-flow.jpg) <br>
