@@ -4,6 +4,7 @@
 * [How Spring Web Security Works?](#how-spring-web-security-works)
 * [Spring Security Default](#spring-security-default)
 * [JWT](#jwt)
+* [OAuth](#oauth)
 ## What Spring Security Can do
 * User name / password authentication
 * SSO - LDAP ,Okta
@@ -210,6 +211,8 @@ protected void configure(HttpSecurity http) throws Exception {
 ```
 * Test other endpoints with token.
 ![](images/calling-service-with-token.PNG) <br>
+
+## [OAuth](02_spring-security-jwt)
 
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
