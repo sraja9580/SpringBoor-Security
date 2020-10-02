@@ -215,10 +215,18 @@ protected void configure(HttpSecurity http) throws Exception {
 ## [OAuth](02_spring-security-jwt)
 OAuth is an open standard for access delegation, it was created for **authorization**.Now it is being used for SSO authentication also.
 **OAuth Scenarios**
-* Webservice to Webserice autoriztion (client id, secret)
-* One App need to access some resource from another app, but user will authenidcate this one(**ex an application asking access to google contact list**)
+* OAuth Teriminologies
+* [Client Credentials Flow](#client-credentials-flow) 
+* [Authorization Code Flow](#authorization-code-flow)
 * SSO
-
+### Client Credentials Flow
+Webservice to Webserice autoriztion(client id, secret)
+![client-credentials-flow](images/oauth-client-credentails-flow.PNG) <br>
+### Authorization Code Flow
+One App need to access some resource from another app, but user will authenidcate this one(**ex an application asking access to google contact list**)
+![code-flow](images/oauth-codeflow-1.PNG) <br>
+**Detailed Flow**
+![code-flow](images/oauth-codeflow-2.PNG) <br>
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
 	https://www.youtube.com/watch?v=iyXne7dIn7U
