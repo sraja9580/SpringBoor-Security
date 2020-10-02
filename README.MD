@@ -213,8 +213,7 @@ protected void configure(HttpSecurity http) throws Exception {
 ![](images/calling-service-with-token.PNG) <br>
 
 ## [OAuth](02_spring-security-jwt)
-OAuth is an open standard for access delegation, it was created for **authorization**.Now it is being used for SSO authentication also.
-**OAuth Scenarios**
+OAuth is an open standard for access delegation, it was created for **authorization**.Now it is being used for SSO authentication also. 
 * OAuth Teriminologies
 * [Client Credentials Flow](#client-credentials-flow) 
 * [Authorization Code Flow](#authorization-code-flow)
