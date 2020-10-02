@@ -220,12 +220,12 @@ OAuth is an open standard for access delegation, it was created for **authorizat
 * SSO
 ### Client Credentials Flow
 Webservice to Webserice autoriztion(client id, secret)
-![client-credentials-flow](images/oauth-client-credentails-flow.PNG) <br>
+![client-credentials-flow](images/oauth-client-credentails-flow.jpg) <br>
 ### Authorization Code Flow
 One App need to access some resource from another app, but user will authenidcate this one(**ex an application asking access to google contact list**)
-![code-flow](images/oauth-codeflow-1.PNG) <br>
+![code-flow](images/oauth-codeflow-1.png) <br>
 **Detailed Flow**
-![code-flow](images/oauth-codeflow-2.PNG) <br>
+![code-flow](images/oauth-codeflow-2.png) <br>
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
 	https://www.youtube.com/watch?v=iyXne7dIn7U
