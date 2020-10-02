@@ -219,6 +219,13 @@ OAuth is an open standard for access delegation, it was created for **authorizat
 * [Authorization Code Flow](#authorization-code-flow)
 * SSO
 ### OAuth Teriminologie
+**Resource**<br>
+**Resource Owner**<br>
+Owner of the resource ._An entity capable of granting access to a protected resource_.
+**Client**<br>
+Client application. _An application making request to protected resource with authorization_.
+**Auth Server**<br>
+The Server issuing access token to the client
 ### Client Credentials Flow
 Webservice to Webserice autoriztion(client id, secret)<br>
 ![client-credentials-flow](images/oauth-client-credentails-flow.jpg) <br>
