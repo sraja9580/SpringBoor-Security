@@ -236,7 +236,7 @@ One App need to access some resource from another app, but user will authenidcat
 ![code-flow](images/oauth-codeflow-2.png) <br>
 1. Spring Boot Configure Authentication 01_spring_boot_authentication
 ---------------------------------------------------------------------
-	https://www.youtube.com/watch?v=iyXne7dIn7U
+	 
 	
 	Use Spring Provided Authentication
 	
@@ -268,7 +268,7 @@ One App need to access some resource from another app, but user will authenidcat
 2. Spring Boot Configure Authorization 02_spring_boot_authorization
 -------------------------------------------------------------------
 
-	https://www.youtube.com/watch?v=payxWrmF_0k
+	 
 	
     * Authorization verify whether user(authenticated) has access to particular resource.
 	
