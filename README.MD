@@ -306,7 +306,7 @@ One App need to access some resource from another app, but user will authenidcat
 3. Spring JDBC Authentication with H2 in memory database 03_spring_security_jdbc
 --------------------------------------------------------------------------------
 	
-	https://www.youtube.com/watch?v=LKvrFltAgCQ&t=111s
+	 
 	
 	Using DEFAULT Schema
 	....................
@@ -403,7 +403,7 @@ One App need to access some resource from another app, but user will authenidcat
 4. Spring Security By overriding UserDetailsService using JPA and MYSQL (04_spring_security_userdetailsservice_jpa)
 -------------------------------------------------------------------------------------------------------------------
 	
-	https://www.youtube.com/watch?v=TNt3GHuayXs
+	 
 	
 	*Spring dont provide direct integration with JPA like it does for JDBC,we have to override user details service and provide it to authentication.
 	Even if we are not doing spring internally used UserDatailsService,By overriding it we can provide custom implementation.
@@ -465,4 +465,4 @@ One App need to access some resource from another app, but user will authenidcat
 
 5. LDAP AUTHENDICATION
 ----------------------
-	https://www.youtube.com/watch?v=-wDUChgvYgU
+
